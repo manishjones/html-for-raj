@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Agent Commission</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
+    <script src="calculatecommission.js"></script>
+
+    <style>
+        label {
+            cursor: default;
+            color:#000000
+        }
+        h3 {
+            cursor: default;
+            color:#000000
+        }
+      
+
+    
+                
+            ::-webkit-scrollbar { 
+    display: none; 
+}
+.footer-div {
+            height: 5vh;
+            padding: 0;
+            margin: 0;
+
+
+
+        }
+
+        .table {
+            height: 5vh;
+            background-color: rgb(161, 161, 161);
+            border: 1px;
+            color: blanchedalmond;
+            padding: 0;
+            margin: 0;
+
+        }
+        .table1{
+            color: #111;
+            width: 100vw;
+            border :2px;
+            margin: 0%;
+            background-color:rgb(161,161,161);
+        }
+
+    
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    background:url("./Images/all.jpg");
+}
+                
+                .sidenav {
+                    height: 100%;
+                    width: 0;
+                    position: fixed;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    background-color: #111;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    padding-top: 30px;
+                }
+                
+                .sidenav a {
+                    padding: 8px 8px 8px 32px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #818181;
+                    display: block;
+                    transition: 0.3s;
+                }
+                
+                .sidenav img {
+                    padding: 8px 8px 8px 32px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #818181;
+                    display: block;
+                    transition: 0.3s;
+                }
+                
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+                
+                .sidenav .closebtn {
+                    position: absolute;
+                    top: 0;
+                    right: 25px;
+                    font-size: 36px;
+                    margin-left: 50px;
+                }
+                
+                #main {
+                    transition: margin-left .5s;
+                    padding: 16px;
+                }
+                
+                @media screen and (max-height: 450px) {
+                  .sidenav {padding-top: 15px;}
+                  .sidenav a {font-size: 18px;}
+                }
+                </style>
+</head>
+
+</head>
+
+<body background="./Images/CTS.jpg">
+    <!-- vertical nvabarcode starts here -->
+<!--  -->
+<!--  -->
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="./Images/log.png" height="100">
+        <a fontsize = 11 href="AgentRegistration.html">Agent Registration</a>
+        <a href="CalculateCommission.html">Calculate Commission</a>
+        <a href="MangeLicences.html">Manage Licences</a>
+        <a href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "320px";
+            document.getElementById("main").style.marginLeft = "320px";
+    
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            
+        }
+        </script>
+    <!-- script ends here -->
+    <!--  -->
+    <!--  -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <a class="navbar-brand" href="AdminHome.html">AMS</a>
+        <!-- <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="AgentRegistration.html">Agent Registration</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Calculate Commission</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="MangeLicences.html">Manage Licences</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+            </li>
+        </ul> -->
+        <ul class="navbar-nav ml-auto">
+            <a class="btn btn-info" href="HomePage.html">Logout</a>
+        </ul>
+    </nav>
+
+    <div class="container jumbotron bg-light col-6 mt-5">
+        <div>
+            <center>
+                <h3>Enter Details</h3>
+            </center>
+        </div>
+        <hr>
+        <br>
+        <form id="commissionform" onsubmit=" return validate()">
+            <div class="form-group">
+                <label for="from">From Date </label>
+
+                <input class="form-control" type="date" id="from" placeholder="From Date">
+            </div>
+            <div class="form-group ">
+                <label for="to">To Date </label>
+
+                <input class="form-control" type="date" id="to" placeholder="To Date">
+            </div>
+            <div class="form-group ">
+
+                <label for="agentselect">Agents</label>
+                <select class="custom-select" id="agentselect" onload="selectAgents()" onchange="selectAgents()">
+                    <option disabled selected value="">Select An Option</option>
+                    <option value='All Agents'>All Agents</option>
+                    <option value='Single Agent'>Single Agent</option>
+                </select>
+            </div>
+            <hr>
+            <div class="form-group" id="agentid">
+                <label for="agentid">Agent ID</label>
+                <input type="text" class="form-control" placeholder="AgentId">
+            </div>
+            <div class="form-group">
+                <center>
+                    <button class="btn btn-primary col-6" type="submit">Submit</button>
+                </center>
+            </div>
+        </form>
+    </div>
+    <script>$("#agentid").hide();</script>
+    <footer>
+            <div class="footer-div">
+                <center>
+                    <table class="table">
+                        <tr>
+                            <td colspan="1"><a href="https://WWW.facebook.com"><img src='./Images/svb.png' style="height:3vh;"></a>
+                            </td>
+                            <td colspan="1"><a href="https://WWw.twitter.com"><img src='./Images/bvs.png' style="height:3vh;"></a></td>
+                            <td colspan="1"><a href="https://WWw.linkedin.com"><img src='./Images/Superman.png' style="height:3vh;"></a>
+                            </td>
+                        </tr>
+                    </table>
+    
+                    <table class="table1">
+                        <tr>
+                            <th>one</th>
+                            <th>two</th>
+                            <th>three </th>
+                        </tr>
+                        <tr>
+                            <td>day uno</td>
+                            <td>day two</td>
+                            <td>day3</td>
+                        </tr>
+                        <tr>
+                            <td>week1</td>
+                            <td>week2</td>
+                            <td>week3</td>
+                        </tr>
+                    </table>
+    
+                </center>
+    
+            </div>
+        </footer>
+</body>
+
+</html>

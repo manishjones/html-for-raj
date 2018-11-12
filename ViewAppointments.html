@@ -1,0 +1,423 @@
+<!doctype html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>View Appointments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <style>
+
+    
+            body {
+                font-family: "Lato", sans-serif;
+                transition: background-color .5s;
+                background: url(./Images/all.jpg);
+            }
+            
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 30px;
+            }
+            
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .sidenav img {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+            
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+            
+            #main {
+                transition: margin-left .5s;
+                padding: 16px;
+            }
+            
+            @media screen and (max-height: 450px) {
+              .sidenav {padding-top: 15px;}
+              .sidenav a {font-size: 18px;}
+            }
+            </style>
+</head>
+
+<body >
+<!-- vertical nvabarcode starts here -->
+<!--  -->
+<!--  -->
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="./Images/log.png" height="100">
+        <a fontsize = 11 href="CustomerHome.html">View Appointments</a>
+        <a href="ScheduleAppointments.html">Schedule Appointment</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "320px";
+            document.getElementById("main").style.marginLeft = "320px";
+    
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            
+        }
+        </script>
+    <!-- script ends here -->
+    <!--  -->
+    <!--  -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <a class="navbar-brand" href="#">AMS</a>
+<!-- <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">View Appointments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Schedule Appointment</a>
+      </li>
+    </ul> -->
+    <ul class="navbar-nav ml-auto">
+            <a class="btn btn-info" href="HomePage.html">Logout</a>
+    </ul>
+  </nav>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Appointments</h1>
+                <p>
+                    <div class="btn-group" role="group">
+                        <a class="btn btn-primary my-2" data-toggle="collapse" href="#upcoming" role="button"
+                            aria-expanded="false" aria-controls="upcoming">Upcoming Appointments</a>
+                        <a class="btn btn-primary my-2" data-toggle="collapse" href="#past" role="button" aria-expanded="false"
+                            aria-controls="past">Past Appointments</a>
+                    </div>
+                </p>
+            </div>
+        </section>
+
+
+        <div id="accordion">
+            <div class="collapse show" id="upcoming" data-parent="#accordion">
+                <div class="album py-5 bg-light">
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-sm btn-outline-secondary">Cancel</button>
+                                            </div>
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="collapse" id="past" data-parent="#accordion">
+                <div class="album py-5 bg-light">
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointment Details</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointments Date</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointments Date</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointments Date</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body">
+                                        <h3 class="card-heading">Appointments Date</h3>
+                                        <p class="card-text">Agent ID<br>Agent Name<br>Agent Contact Number<br>Agent
+                                            E-Mail</p>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small class="text-muted">Appointment Time</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <p class="float-right">
+        <a href="#">Back to top</a>
+    </p>
+
+
+</body>
+
+</html>

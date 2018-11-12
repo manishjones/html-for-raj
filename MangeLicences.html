@@ -1,0 +1,155 @@
+<!doctype html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Manage Licences</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="managelicences.js"></script>
+    <!-- Custom styles for this template -->
+    <style>
+
+    
+            body {
+                font-family: "Lato", sans-serif;
+                transition: background-color .5s;
+                background: url(./images/all.jpg);
+                background-attachment: fixed;
+            }
+            
+            .sidenav {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 30px;
+            }
+            
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .sidenav img {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 20px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .sidenav a:hover {
+                color: #f1f1f1;
+            }
+            
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+            
+            #main {
+                transition: margin-left .5s;
+                padding: 16px;
+            }
+            
+            @media screen and (max-height: 450px) {
+              .sidenav {padding-top: 15px;}
+              .sidenav a {font-size: 18px;}
+            }
+            </style>
+</head>
+
+<body>
+ <!-- vertical nvabarcode starts here -->
+<!--  -->
+<!--  -->
+<div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="./Images/log.png" height="100">
+        <a fontsize = 11 href="AgentRegistration.html">Agent Registration</a>
+        <a href="CalculateCommission.html">Calculate Commission</a>
+        <a href="MangeLicences.html">Manage Licences</a>
+        <a href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "320px";
+            document.getElementById("main").style.marginLeft = "320px";
+    
+        }
+        
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            
+        }
+        </script>
+    <!-- script ends here -->
+    <!--  -->
+    <!--  -->
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <a class="navbar-brand" href="AdminHome.html">AMS</a>
+<ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="AgentRegistration.html">Agent Registration</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="CalculateCommission.html">Calculate Commission</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="MangeLicences.html">Manage Licences</a>
+      </li>
+      <li class="nav-item">
+            <a class="nav-link" href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+          </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+            <button type="button" class="btn btn-info">Logout</button>
+    </ul>
+    </nav>
+
+
+    <main role="main">
+
+        <section class="jumbotron text-center" id="jumbot">
+            <div class="container">
+                <h1 class="jumbotron-heading">Policy Licence Tools</h1>
+                <p>
+                    <div class="btn-group" role="group">
+                            <a class="btn btn-primary my-2" onclick="viewLicences()">View Licenes</a>
+                        <a class="btn btn-primary my-2" data-toggle="collapse" href="AddLicence.html" role="button"
+                            aria-expanded="false" aria-controls="active">Add Licence</a>
+                    </div>
+                </p>
+            </div>
+        </section>
+
+        <div class="container text-center" id="buttonspace"></div>
+        <div class="container">
+            <div class="row" id="cardspace">
+            </div>
+        </div>
+
+</body>
+
+</html>

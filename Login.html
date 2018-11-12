@@ -1,0 +1,146 @@
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<!DOCTYPE html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <style>
+
+        ::-webkit-scrollbar { 
+    display: none; 
+}
+.footer{
+    position:absolute;
+            bottom: 0%;           
+}
+.footer-div {
+    position: relative;
+            height: 5vh;
+            padding: 0;
+            margin: 0;
+                   }
+
+        .table {
+            height: 5vh;
+            background-color: rgb(161, 161, 161);
+            border: 1px;
+            color: blanchedalmond;
+            padding: 0;
+            margin: 0;
+
+        }
+        .table1{
+            color: #111;
+            width: 100vw;
+            border :2px;
+            margin: 0%;
+            background-color:rgb(161,161,161);
+        }
+
+    
+body {
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
+    background-image:url("./Images/jupiterclouds.png");
+    background-attachment: fixed;
+}
+
+
+label {
+    cursor: default;
+    color:#000000
+}
+
+h5 {
+    cursor: default;
+    color:#000000
+}
+
+</style>
+</head>
+
+<body >
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <a class="navbar-brand" href="HomePage.html">AMS</a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin border-secondary my-5 bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Sign In</h5>
+                        <form class="form-signin">
+                            <div class="form-label-group">
+                                <label for="inputEmail">Username</label>
+                                <input type="text" id="inputEmail" class="form-control" placeholder="Enter Username"
+                                    required autofocus>
+                            </div>
+
+                            <br>
+
+                            <div class="form-label-group">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Enter Password"
+                                    required>
+
+                            </div>
+
+                            <hr class="my-3">
+                            <center>
+                                <a href="AdminHome.html" class="btn btn-lg btn-block btn-primary text-uppercase">Sign
+                                    In</a><br>
+                            </center>
+                        </form>
+                        <center><a style="color:#000000;" href="CustomerRegistration.html">New customer?</a></center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-div">
+            <center>
+                <table class="table">
+                    <tr>
+                        <td colspan="1"><a href="https://WWW.facebook.com"><img src='./Images/svb.png' style="height:3vh;"></a></td>
+                        <td colspan="1"><a href="https://WWw.twitter.com"><img src='./Images/bvs.png' style="height:3vh;"></a></td>
+                        <td colspan="1"><a href="https://WWw.linkedin.com"><img src='./Images/Superman.png' style="height:3vh;"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <th>one</th>
+                        <th>two</th>
+                        <th>three </th>
+                    </tr>
+                    <tr>
+                        <td>day uno</td>
+                        <td>day two</td>
+                        <td>day3</td>
+                    </tr>
+                    <tr>
+                        <td>week1</td>
+                        <td>week2</td>
+                        <td>week3</td>
+                    </tr>
+                </table>
+
+            </center>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!doctype html>
+<html manifest="manifest.appcache">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" href="node_modules/bootstrap/dist/css/Slate.css" />
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .footer-div {
+            height: 5vh;
+            padding: 0;
+            margin: 0;
+
+
+
+        }
+
+        .table {
+            height: 5vh;
+            background-color: rgb(161, 161, 161);
+            border: 1px;
+            color: blanchedalmond;
+            padding: 0;
+            margin: 0;
+
+        }
+        .table1{
+            color: #111;
+            width: 100vw;
+            border :2px;
+            margin: 0%;
+            background-color:rgb(161,161,161);
+        }
+
+        .jumbotron {
+            margin: 0;
+            border: 0;
+        }
+
+        body {
+
+            font-family: "Lato", sans-serif;
+            transition: background-color .5s;
+            height: 100%
+        }
+
+        div {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        html {
+            height: 100%
+        }
+
+        div.cards {
+            background-color: #000000CC;
+            font-size: 30px;
+            height: 40vh;
+            color: white;
+            align-content: center;
+            vertical-align: middle;
+            margin: 0%;
+            border-width: 0ch;
+            padding-top: 350px;
+            padding: 0%;
+
+        }
+
+        div.card-text {
+            align-content: center;
+            font-size: 16px;
+            color: #FFFFFF;
+            transform: translate(0%, 40%);
+            border-width: 0;
+            padding-bottom: 0px;
+        }
+
+        .parallax {
+            /* The image used */
+            background-image: url('./Images/sun.jpg');
+            /* Full height */
+            height: 90vh;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax2 {
+            /* The image used */
+            background-image: url('./Images/jupiter.jpg');
+            /* Full height */
+            height: 90vh;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax3 {
+            /* The image used */
+            background-image: url('./Images/saturn.jpg');
+            /* Full height */
+            height: 90vh;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .parallax4 {
+            /* The image used */
+            background-image: url('./Images/saturn1.jpg');
+            /* Full height */
+            height: 90vh;
+            /* Create the parallax scrolling effect */
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 30px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav img {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- vertical nvabarcode starts here -->
+    <!--  -->
+    <!--  -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <img src="./Images/log.png" height="100">
+        <a fontsize=11 href="AgentRegistration.html">Agent Registration</a>
+        <a href="CalculateCommission.html">Calculate Commission</a>
+        <a href="MangeLicences.html">Manage Licences</a>
+        <a href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+    </div>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "320px";
+            document.getElementById("main").style.marginLeft = "320px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+
+        }
+    </script>
+    <!-- script ends here -->
+    <!--  -->
+    <!--  -->
+
+
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+        <!-- dont't forget to copy this for the hamburger icon -->
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <a class="navbar-brand" href="#">AMS</a>
+        <!-- <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="AgentRegistration.html">Agent Registration</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="CalculateCommission.html">Calculate Commission</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="MangeLicences.html">Manage Licences</a>
+    </li>
+    <li class="nav-item">
+          <a class="nav-link" href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+        </li>
+  </ul> -->
+        <ul class="navbar-nav ml-auto">
+            <a class="btn btn-info" href="HomePage.html">Logout</a>
+        </ul>
+    </nav>
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Welcome Admin</h1>
+                <center>
+                    <p class="lead text-muted col-6">Agent Management System allows you to Manage Licences and do Agent
+                        Registration,Calculate Commission,Customer Policy Registration</p>
+                </center>
+                <p>
+                    <a class="btn btn-primary my-2" href="AgentRegistration.html">Agent Registration</a>
+                    <a class="btn btn-primary my-2" href="CalculateCommission.html">Calculate Commission</a>
+                    <a class="btn btn-primary my-2" href="MangeLicences.html">Manage Licences</a>
+                    <a class="btn btn-primary my-2" href="CustomerPolicyRegistration.html">Customer Policy Registration</a>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <div class="parallax">
+        <div class="cards">
+            Agent Registration:
+
+            <div class="card-text"> This module of Agent Management System allows you to register the agents,
+                who can provide information regarding different insurance policies available for the customers.
+                You are required to enter the details of the agents inorder to have them registered. Only upon
+                registration,
+                an agent would be eligible for having an appointment with a customer.
+
+            </div>
+        </div>
+
+    </div>
+    <div class="parallax2">
+        <div class="cards">
+            Calculate Commission:
+            <div class="card-text">
+                This module allows you to calculate commission for agents. It gives you a provision to choose between
+                calculating commission for the entire agents available or of a single agent. If you are looking for
+                calculating commission for only one agent, this module would ask you for the respective Agent's ID. The
+                commission is calculated depending on the commission rates fixed by the system.
+            </div>
+        </div>
+    </div>
+    <div class="parallax3">
+        <div class="cards">
+            Manage Liceneces:
+            <div class="card-text">
+                This page allows you to browse through issued licences and also allows you to add new licences
+
+            </div>
+        </div>
+    </div>
+    <div class="parallax4">
+        <div class="cards">
+            Customer Policy Registration:
+            <div class="card-text">
+                This page all takes in all the details of the custom band maps his relationship with the agent.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-div">
+            <center>
+                <table class="table">
+                    <tr>
+                        <td colspan="1"><a href="https://WWW.facebook.com"><img src='./Images/svb.png' style="height:3vh;"></a>
+                        </td>
+                        <td colspan="1"><a href="https://WWw.twitter.com"><img src='./Images/bvs.png' style="height:3vh;"></a></td>
+                        <td colspan="1"><a href="https://WWw.linkedin.com"><img src='./Images/Superman.png' style="height:3vh;"></a>
+                        </td>
+                    </tr>
+                </table>
+
+                <table class="table1">
+                    <tr>
+                        <th>one</th>
+                        <th>two</th>
+                        <th>three </th>
+                    </tr>
+                    <tr>
+                        <td>day uno</td>
+                        <td>day two</td>
+                        <td>day3</td>
+                    </tr>
+                    <tr>
+                        <td>week1</td>
+                        <td>week2</td>
+                        <td>week3</td>
+                    </tr>
+                </table>
+
+            </center>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
